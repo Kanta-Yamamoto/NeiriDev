@@ -17,5 +17,5 @@ export const userState = atom({
     name: "hoge",
     age: 11
   },
-  effects_UNSTABLE: [persistAtom] //追加
+  effects_UNSTABLE: [persistAtom]
 });

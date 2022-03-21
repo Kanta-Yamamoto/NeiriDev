@@ -20,7 +20,7 @@ const Home = () => {
 
   return (
     <>
-      <h1>Home</h1>
+      <div className="h-6 w-auto">Home</div>
       <div>
         <p>count:{count}</p>
         <button onClick={() => setCount(increment)}>count increment</button>
