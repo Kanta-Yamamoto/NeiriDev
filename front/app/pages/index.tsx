@@ -18,16 +18,22 @@ const Home = () => {
     return { ...u, ...{ age: u.age + 1 } };
   }
 
+  const updateName = u => {
+    return { name: "hoge3", age: u.age };
+  }
+
   return (
     <>
-      <h1>Home</h1>
+      <div className="h-6 w-auto">Home</div>
       <div>
         <p>count:{count}</p>
         <button onClick={() => setCount(increment)}>count increment</button>
         <hr />
         <p>user.name:{user.name}</p>
         <p>user.age:{user.age}</p>
-        <button onClick={() => setUser(updateUser)}>age increment</button>
+        <button onClick={() => setUser(updateUser)}>age increment</button><br></br>
+        <button onClick={() => setUser(updateName)}>change Name</button>
+
       </div>
       <hr />
       <div>
