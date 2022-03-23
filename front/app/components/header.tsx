@@ -31,7 +31,7 @@ export default function header() {
 
 
   return (
-    <div className="w-full h-16 bg-black" >
+    <div className="w-full h-16 bg-black px-3" >
       <div className="my-0 mx-auto max-w-screen-lg h-full flex items-center justify-between">
         <div className="text-white font-bold text-4xl w-auto"><Link href="/"><a>Neiri dev</a></Link></div>
         <div

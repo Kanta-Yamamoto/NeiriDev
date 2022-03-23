@@ -1,16 +1,14 @@
 import NavArray from "../components/templates/navArray";
 
+const Profile = () => {
 
-const mypage = () => {
-
-  return (
-    <>
-    </>)
+  return (<>
+  </>)
 }
 
-export default mypage
+export default Profile
 
-mypage.getLayout = (page) => (
+Profile.getLayout = (page) => (
   <>
     <div className="flex">
       <NavArray />

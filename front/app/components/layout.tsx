@@ -5,8 +5,8 @@ export default function Layout({ children }) {
     <>
       <div className="bg-background">
         <Header />
-        <main>
-          <div className="my-0 mx-auto min-h-screen max-w-screen-lg">
+        <main className="px-3">
+          <div className="my-0 mx-auto min-h-screen max-w-screen-lg h-auto">
             {children}
           </div>
         </main>

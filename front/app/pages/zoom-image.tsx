@@ -1,16 +1,14 @@
 import NavArray from "../components/templates/navArray";
 
+const ZoomImage = () => {
 
-const mypage = () => {
-
-  return (
-    <>
-    </>)
+  return (<>
+  </>)
 }
 
-export default mypage
+export default ZoomImage
 
-mypage.getLayout = (page) => (
+ZoomImage.getLayout = (page) => (
   <>
     <div className="flex">
       <NavArray />
