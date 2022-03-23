@@ -1,12 +1,10 @@
 import NavArray from "../components/templates/navArray";
 
-const Question = () => {
+export default function Question() {
 
   return (<>
   </>)
 }
-
-export default Question
 
 Question.getLayout = (page) => (
   <>

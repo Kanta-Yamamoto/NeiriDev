@@ -1,14 +1,13 @@
 import NavArray from "../components/templates/navArray";
 
 
-const mypage = () => {
+export default function mypage() {
 
   return (
     <>
+
     </>)
 }
-
-export default mypage
 
 mypage.getLayout = (page) => (
   <>

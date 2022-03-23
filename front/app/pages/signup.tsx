@@ -7,7 +7,7 @@ import { SignUpParams } from "../interfaces/index"
 import Cookies from "js-cookie"
 
 
-const signup = () => {
+export default function signup() {
 
   const router = useRouter();
 
@@ -32,6 +32,7 @@ const signup = () => {
 
       }
     } catch (err) {
+      console.log("エラーです")
     }
   }
 
@@ -51,7 +52,7 @@ const signup = () => {
             type='text'
             {...register('email', { required: true, maxLength: 20 })}
           />
-          {errors.Email && 'Email is required'}
+          {errors.email && 'Email is required'}
         </div>
         <div className="flex flex-col max-w-[70%] mx-auto">
           <label className="text-left" htmlFor='password'>パスワード</label>
@@ -61,7 +62,7 @@ const signup = () => {
             id='password'
             {...register('password', { required: true, pattern: /^[A-Za-z]+$/i })}
           />
-          {errors.lastName && 'password is required'}
+          {errors.password && 'password is required'}
         </div>
         <input className="font-bold text-lg w-auto border-2 border-black px-5 py-1 rounded-md mt-5 mb-4" type='submit' />
       </form>
@@ -69,5 +70,3 @@ const signup = () => {
     </Outline>
   </>)
 }
-
-export default signup

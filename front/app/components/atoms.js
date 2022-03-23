@@ -7,7 +7,7 @@ const { persistAtom } = recoilPersist();
 export const countState = atom({
   key: "count",
   default: 0,
-  effects_UNSTABLE: [persistAtom]
+  // effects_UNSTABLE: [persistAtom]
 });
 
 //user
@@ -17,5 +17,12 @@ export const userState = atom({
     name: "hoge",
     age: 11
   },
-  effects_UNSTABLE: [persistAtom]
+  // effects_UNSTABLE: [persistAtom]
 });
+
+
+export const authState = atom({
+  key: "isSignedIn",
+  default: false,
+  effects_UNSTABLE: [persistAtom]
+})

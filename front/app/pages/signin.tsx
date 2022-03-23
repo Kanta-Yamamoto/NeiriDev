@@ -2,13 +2,15 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { useRouter } from "next/router";
 import Outline from "../components/organisms/outline";
 import UnderlineLink from "../components/atoms/underlineLink"
+import { signIn } from "../lib/api/auth";
+import { SignInParams } from "../interfaces/index"
+import Cookies from "js-cookie"
+import { useRecoilState } from "recoil";
+import { authState } from "../components/atoms";
 
-interface IFormInput {
-  Email: string;
-  password: string;
-}
+export default function signin() {
 
-const signin = () => {
+  const [auth, setAuth] = useRecoilState(authState);
 
   const router = useRouter();
 
@@ -19,12 +21,25 @@ const signin = () => {
     reset,
   } = useForm();
 
-  const onSubmit = (data: IFormInput) => {
-    console.log(data);
-    reset();
-    router.replace("/mypage");
 
-  };
+  const onSubmit = async (data: SignInParams) => {
+    reset();
+    try {
+      const res = await signIn(data)
+
+      if (res.status === 200) {
+        Cookies.set("_access_token", res.headers["access-token"])
+        Cookies.set("_client", res.headers["client"])
+        Cookies.set("_uid", res.headers["uid"])
+        router.replace("/mypage");
+        setAuth(true)
+      } else {
+
+      }
+    } catch (err) {
+      console.log("エラーです")
+    }
+  }
 
 
   return (<>
@@ -41,7 +56,7 @@ const signin = () => {
             type='text'
             {...register('email', { required: true, maxLength: 20 })}
           />
-          {errors.Email && 'Email is required'}
+          {errors.email && 'Email is required'}
         </div>
         <div className="flex flex-col max-w-[70%] mx-auto">
           <label className="text-left" htmlFor='password'>パスワード</label>
@@ -59,5 +74,3 @@ const signin = () => {
     </Outline>
   </>)
 }
-
-export default signin
