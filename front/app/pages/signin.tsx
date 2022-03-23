@@ -1,7 +1,7 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
-import Link from 'next/link'
 import { useRouter } from "next/router";
-
+import Outline from "../components/organisms/outline";
+import UnderlineLink from "../components/atoms/underlineLink"
 
 interface IFormInput {
   Email: string;
@@ -28,7 +28,7 @@ const signin = () => {
 
 
   return (<>
-    <div className="border-2 border-black mt-5 max-w-xl mx-auto bg-background">
+    <Outline>
       <h1 className="mx-auto my-5 text-2xl font-semibold w-auto text-center">
         ログインする</h1>
 
@@ -39,7 +39,7 @@ const signin = () => {
             className="indent-2 border-2 border-black h-10 mb-2"
             id='Email'
             type='text'
-            {...register('Email', { required: true, maxLength: 20 })}
+            {...register('email', { required: true, maxLength: 20 })}
           />
           {errors.Email && 'Email is required'}
         </div>
@@ -55,8 +55,8 @@ const signin = () => {
         </div>
         <input className="font-bold text-lg w-auto border-2 border-black px-5 py-1 rounded-md mt-5 mb-4" type='submit' />
       </form>
-      <Link href="/signup"><a><p className="text-center mb-5 underline">新規登録ページはこちら</p></a></Link>
-    </div>
+      <UnderlineLink url="signup">新規登録はこちら</UnderlineLink>
+    </Outline>
   </>)
 }
 
