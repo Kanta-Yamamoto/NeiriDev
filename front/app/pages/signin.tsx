@@ -33,11 +33,11 @@ export default function signin() {
         Cookies.set("_uid", res.headers["uid"])
         router.replace("/mypage");
         setAuth(true)
+        console.log(res.data)
       } else {
 
       }
     } catch (err) {
-      console.log("エラーです")
     }
   }
 

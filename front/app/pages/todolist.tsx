@@ -2,9 +2,8 @@ import NavArray from "../components/templates/navArray";
 
 const Todolist = () => {
 
-  const todoData = [{ content: "買い物をする", date: "2022-04-03" }, { content: "迎えに行く", date: "2022-04-05" }]
+  const todoData = [{ content: "買い物をする" }, { content: "迎えに行く" }]
 
-  console.log(todoData)
 
   return (<>
     <div className="w-full h-auto flex">
@@ -12,7 +11,7 @@ const Todolist = () => {
 
         {todoData.map((todoArray) => (
           <div key={todoArray.content} className="w-full min-h-content">
-            {todoArray.content}{todoArray.date}
+            {todoArray.content}
 
           </div>
         ))}
