@@ -1,5 +1,5 @@
 import NavArray from "../components/templates/navArray";
-import { GetIssues, PostIssue, DeleteIssue } from "../lib/api/Issue";
+import { GetIssues, PostIssue } from "../lib/api/Issue";
 import { useState, useEffect, useContext } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 
@@ -24,13 +24,13 @@ const Todolist = () => {
     } catch (err) {}
   };
 
-  const handleDeleteIssue = async () => {
-    try {
-      const response = await DeleteIssue();
-      if (response.status === 200) {
-      }
-    } catch (err) {}
-  };
+  // const handleDeleteIssue = async () => {
+  //   try {
+  //     const response = await DeleteIssue();
+  //     if (response.status === 200) {
+  //     }
+  //   } catch (err) {}
+  // };
 
   const onSubmit = async (data) => {
     reset();
