@@ -32,7 +32,6 @@ export default function signup() {
 
       }
     } catch (err) {
-      console.log("エラーです")
     }
   }
 

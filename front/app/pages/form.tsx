@@ -22,7 +22,6 @@ const form = () => {
   } = useForm();
 
   const onSubmit = (data: IFormInput) => {
-    console.log(data);
     reset();
   };
 
