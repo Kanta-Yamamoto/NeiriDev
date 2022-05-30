@@ -6,6 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Issue.create!(
-  content: "これはテストのissueです",
-  user_id: 4
+  content: "こんにちは",
+  user_id: 3
 )

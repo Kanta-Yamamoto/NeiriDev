@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       end
 
       resources :issues, only: [:index, :create, :update, :show, :destroy] do
+      end
     end
   end
 end
